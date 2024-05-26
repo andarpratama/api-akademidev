@@ -5,6 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import * as dotenv from 'dotenv';
 import { Connection } from 'typeorm';
+import { AuthModule } from './auth/auth.module';
+import { PostModule } from './post/post.module';
 dotenv.config();
 
 @Module({
@@ -20,6 +22,9 @@ dotenv.config();
       synchronize: true,
     }),
     UserModule,
+    AuthModule,
+    AppModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
